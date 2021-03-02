@@ -41,12 +41,13 @@ namespace rysoinator
             BmpPixelSnoop snoop = new BmpPixelSnoop(resultImage);
             {
                 Color lastColor;
-                for (int x_r = -width / 2; x_r < width / 2; x_r++)
+                int x_max = width % 2 == 0 ? width / 2 : width / 2 + 1;
+                int y_max = height % 2 == 0 ? height / 2 : height / 2 + 1;
+                for (int x_r = -width / 2; x_r < x_max; x_r++)
                 {
                     int x = x_r * level * level;
-                    for (int y_r = -height / 2; y_r < height / 2; y_r++)
+                    for (int y_r = -height / 2; y_r < y_max; y_r++)
                     {
-                        snoop.SetPixel(x_r + width / 2, y_r + height / 2, Color.DarkGray);
                         int y = y_r * level * level;
                         double b = x * I + y * J + x * C + y * G + P + L;
                         double c = x * x * A + x * y * E + x * M + x * y * B +

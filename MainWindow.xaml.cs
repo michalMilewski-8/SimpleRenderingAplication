@@ -33,6 +33,8 @@ namespace rysoinator
         public MainWindow()
         {
             InitializeComponent();
+            RenderOptions.SetBitmapScalingMode(drawingSpace, BitmapScalingMode.NearestNeighbor);
+            RenderOptions.SetEdgeMode(drawingSpace, EdgeMode.Aliased);
             drawingSpace.MouseMove += drawingSpace_MouseMove;
             drawingSpace.MouseWheel += drawingSpace_MouseWheel;
             drawingSpace.SizeChanged += DrawingSpace_SizeChanged;
