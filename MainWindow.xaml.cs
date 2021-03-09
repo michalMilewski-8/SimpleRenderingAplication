@@ -94,7 +94,7 @@ namespace rysoinator
 
         private void drawingSpace_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            imaginator.Resize(e.Delta / 1000.0);
+            imaginator.Resize(e.Delta / 4000.0);
             DrawFrame();
         }
 

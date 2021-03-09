@@ -37,6 +37,10 @@ namespace rysoinator
             Matrix<double> tmp = Matrix<double>.Build.Diagonal(4, 4, s);
             tmp[3, 3] = 0;
             resize_matrix += tmp;
+            if (resize_matrix[0, 0] <= 0)
+            {
+                resize_matrix -= tmp;
+            }
             UpdateTransformationMatrix();
         }
 
